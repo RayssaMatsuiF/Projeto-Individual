@@ -10,7 +10,7 @@
     <title>Anne with an e</title>
 </head>
 
-<body>
+<body onload="ranking()">
     <div class="content">
     <div class="navigation">
         <ul>
@@ -37,7 +37,15 @@
             </div>
         </ul>
     </div>
+    <div class="ranking">
+        <h1>RANKING GLOBAL QUIZ</h1>
+        <div id="feed_container" class="feed-container">
+        </div>
+    </div>
 </div>
+
+
+
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
@@ -53,5 +61,64 @@
     }
         list.forEach((item) =>
         item.addEventListener('click', activeLink));
+
+        function ranking() {
+            
+        
+        fetch("/avisos/pontos").then(function (resposta) {
+            if (resposta.ok) {
+                if (resposta.status == 204) {
+                    var feed = document.getElementById("feed_container");
+                    var mensagem = document.createElement("span");
+                    mensagem.innerHTML = "Nenhum resultado encontrado."
+                    feed.appendChild(mensagem);
+                    throw "Nenhum resultado encontrado!!";
+                }
+
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+                    var feed = document.getElementById("feed_container");
+                    feed.innerHTML = " ";
+                    for (let i = 0; i < resposta.length; i++) {
+                        var publicacao = resposta[i];
+                        var divRanking = document.createElement("div")
+
+                        // criando e manipulando elementos do HTML via JavaScript
+                        var divPublicacao = document.createElement("div");
+                        var spanID = document.createElement("span");
+                        var spanTitulo = document.createElement("span");
+                        var spanNome = document.createElement("span");
+                        var divDescricao = document.createElement("span");
+                        var divButtons = document.createElement("div");
+                        var btnEditar = document.createElement("div");
+                        var btnDeletar = document.createElement("div");
+
+                        var resultado = document.querySelector('.ranking')
+                        resultado.appendChild(divRanking);
+                        divRanking.className = 'ranking'
+
+                        divRanking.appendChild(spanID);
+                        divRanking.appendChild(spanNome);
+                        divRanking.appendChild(divDescricao);
+                        
+
+                        spanID.innerHTML = "Posição: <b>" + (i + 1) + "</b> ";
+                        spanNome.innerHTML = " Nome: <b>" + publicacao.Nome + "</b>";
+                        divDescricao.innerHTML = " Nota: <b>" + publicacao.Nota + "</b>" + " Pontos";
+                       
+                       
+
+                    }
+
+    
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+        });
+        }
 
 </script>

@@ -91,45 +91,17 @@ function cadastrar(req, res) {
     }
 }
 
-function voltar(req, res) {
-    var campeao = req.body.championServer;
-    var id = req.body.idServer;
-
-    if (campeao == undefined) {
-        res.status(400).send("Seu campeão está undefined!");
-    } else if (id == undefined) {
-        res.status(400).send("Seu id está undefined!");
-    }  else {
-        
-        usuarioModel.voltar(campeao, id)
-            .then(
-                function (resultado) {
-                    res.json(resultado);
-                }
-            ).catch(
-                function (erro) {
-                    console.log(erro);
-                    console.log(
-                        "\nHouve um erro ao realizar o cadastro de campeão e id! Erro: ",
-                        erro.sqlMessage
-                    );
-                    res.status(500).json(erro.sqlMessage);
-                }
-            );
-    }
-}
-
 function finalizar(req, res) {
     var pontos = req.body.pontosServer;
-    var id = req.body.idServer;
+    var nome = req.body.nomeServer;
 
     if (pontos == undefined) {
         res.status(400).send("Seus pontos está undefined!");
-    } else if (id == undefined) {
-        res.status(400).send("Seu id está undefined!");
+    } else if (nome == undefined) {
+        res.status(400).send("Seu nome está undefined!");
     }  else {
         
-        usuarioModel.finalizar(pontos, id)
+        usuarioModel.finalizar(pontos, nome)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -147,11 +119,12 @@ function finalizar(req, res) {
     }
 }
 
+
 module.exports = {
     entrar,
-    voltar,
     cadastrar,
     finalizar,
     listar,
     testar
+
 }

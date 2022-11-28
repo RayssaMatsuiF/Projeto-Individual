@@ -1,6 +1,5 @@
 // b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-// var idUser = sessionStorage.ID_USUARIO
-
+var nomeVar = sessionStorage.NOME_USUARIO
 var contador = 0
 var pontos = 0
 var resposta = ''
@@ -200,7 +199,7 @@ function finalizar() {
         },
         body: JSON.stringify({
             pontosServer: pontos,
-            idServer: idUser
+            nomeServer: nomeVar
         })
     });
     window.location = 'home.html'

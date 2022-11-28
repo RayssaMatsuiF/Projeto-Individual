@@ -17,7 +17,10 @@ FkUsuário INT, CONSTRAINT ctfkUsuário
 
 CREATE TABLE Nota(
 idNota INT PRIMARY KEY AUTO_INCREMENT,
+Nome varchar (45),
 Nota INT,
 FkQuiz INT, CONSTRAINT ctfkQuiz
 			FOREIGN KEY (FkQuiz) REFERENCES Quiz(idQuiz)
 )AUTO_INCREMENT = 100;
+
+select * from Usuário;
