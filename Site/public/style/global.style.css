@@ -1,0 +1,212 @@
+/* Fonte Manrope */
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+/* Reset CSS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none; 
+    font-family: 'Manrope', sans-serif; 
+}
+  
+body {
+     font-size: 100%;
+     height: 100%;
+}
+
+
+:root {
+    /* Cores */
+
+        /* NEUTRAL */
+        --pink-white: #fff1e6;
+
+        /* BROWN  */
+        --hot-brown: #934b00 ;
+        --baby-brown: #bb6b00 ;
+}
+
+/* Filtros  */
+    /* BLUR FILTER  */
+    .filter-blur-50 {
+        filter: blur(50px);
+    }
+
+    .backdrop-filter-2 {
+        backdrop-filter: blur(2px);
+    }
+
+/* Estilo de fonte  */
+
+    /* MEDIUM */
+
+    .medium-24 {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 33px;
+        letter-spacing: 0.1em;
+    }
+
+    .medium-20 {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 27px;
+    }
+
+    /* SEMI BOLD */
+
+    .semibold-16 {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .semibold-18 {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 25px;
+    }
+
+    .semibold-20 {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 27px;
+    }
+
+    .semibold-24 {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 33px;
+    }
+
+    /* BOLD */
+
+    .bold-20 {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 27px;
+    }
+
+    .bold-spaced-16 {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 22px;
+        letter-spacing: 0.1em;
+    }
+
+    /* EXTRA BOLD */
+
+    .xbold-16 {
+        font-style: normal;
+        font-weight: 800;
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .xbold-18 {
+        font-style: normal;
+        font-weight: 800;
+        font-size: 18px;
+        line-height: 25px;
+    }
+
+    .xbold-20 {
+        font-style: normal;
+        font-weight: 800;
+        font-size: 20px;
+        line-height: 27px;
+    }
+
+    .xbold-24 {
+        font-style: normal;
+        font-weight: 800;
+        font-size: 24px;
+        line-height: 33px;
+    }
+
+    .xbold-30 {
+        font-style: normal;
+        font-weight: 800;
+        font-size: 30px;
+        line-height: 41px;
+    }
+
+    .xbold-32 {
+        font-style: normal;
+        font-weight: 800;
+        font-size: 32px;
+        line-height: 44px;
+    }
+
+    .xbold-40 {
+        font-style: normal;
+        font-weight: 800;
+        font-size: 40px;
+        line-height: 55px;
+    }
+
+    /* DISPLAY */
+
+    .display-48 {
+        font-style: normal;
+        font-weight: 800;
+        font-size: 64px;
+        line-height: 87px;
+    }
+
+    .display-64 {
+        font-style: normal;
+        font-weight: 800;
+        font-size: 64px;
+        line-height: 87px;
+    }
+
+/* Alinhamento de texto  */
+
+.text-align-center {
+    text-align: center;
+}
+
+/* Margem  */
+
+.mt-30 {
+    margin-top: 30px;
+}
+
+.mt-15 {
+    margin-top: 15px;
+}
+
+
+/* Box shadow  */
+
+.shadow {
+    box-shadow: inset 13px 20px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* scrollbar */
+
+*::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: var(--pink-white);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--hot-brown);
+    border-radius: 33px;
+    border: 0px 
+  }

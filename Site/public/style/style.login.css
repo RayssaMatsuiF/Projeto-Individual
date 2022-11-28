@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: var(--pink-white);
+}
+
+header {
+    background-color: var(--pink-white);
+}
+
+header .container {
+    padding: 20px 0;
+}
+
+header.sticky {
+    padding: 5px 100px;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    z-index: 2;
+    width: 100%;
+    position: fixed;
+  }
+  
+.container{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*NAVBAR*/
+  
+.titulo img{
+    width: 80%;
+    cursor: pointer;
+}
+  
+.navegacao {
+    width: 350px;
+    color: var(--neon-orange);
+}
+  
+.navegacao ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+.navegacao ul li a {
+    font-size: 1rem;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    margin-right: 1rem;
+    color: #5F3E0A;
+    position: relative;
+  }
+
+  .navegacao ul li a:hover,
+  .navegacao ul li a.active{
+    color: var(--blue-baby);
+    transition: 0.4s;
+  }
+
+  .navegacao ul li a.active::after,
+  .navegacao ul li a:hover::after{
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: var(--blue-baby);
+    position: absolute;
+    bottom: -5px;
+    left: 1px;
+  }
+
+/*FIM NAVBAR*/
+
+/*MAIN*/
+
+main{
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/logo/anne-login.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+.content h2{
+    color: var(--pink-white);
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 33px;
+    letter-spacing: 0.1em;
+}
+
+.content h1{
+    font-weight: 800;
+    font-size: 50px;
+    line-height: 80px;
+    color: var(--pink-white);
+}
+
+
+.login{
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.caixa_formulario {
+    width: 50%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
+.caixa_formulario h1 {
+    color: var(--hot-brown); 
+    margin-bottom: 10px; 
+    font-size: 35px; 
+    text-align: center;
+
+}
+
+.caixa_formulario input {
+    margin-top: 20px; 
+    padding: 8px 0px; 
+    font-size: 16px; 
+    border-color: var(--baby-brown);
+    border-radius: 10px; 
+    outline: none;
+}
+
+.box_login {
+    background-color: var(--pink-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    width:40%;
+    border-radius: 15px;
+    box-shadow: 2px 2px 10px 8px rgba(107, 107, 107, 0.15);
+}
+
+.caixa_formulario button {
+    margin-top: 10px;
+    padding: 8px 0px;
+    border-radius: 135px;
+    border: none;
+    background-color: var(--baby-brown);
+    color: white;
+    font-weight:bold;
+    cursor: pointer;
+}
+
+.sem_login{
+    font-size: small;
+    color: var(--baby-brown);
+    text-align: center;
+    margin-top: 10px;
+
+}
+
+
+.sem_login b {
+    cursor: pointer;
+}
+
+/*FIM LOGIN*/
+
+footer{
+    border-top: 8px solid var(--hot-brown);
+    background-color: var(--pink-white);
+    padding: 20px 0;
+}
+
+.footer_bottom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.footer_bottom p{
+    margin-top:20px;
+    margin-bottom: 20px;
+    color: black;
+}
+
+

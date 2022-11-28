@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anne with an e | Login</title>
+    <link rel="stylesheet" href="style/global.style.css">
+    <link rel="stylesheet" href="style/style.login.css">
+    <script src="js/script.js"></script>
+    <script src="js/funcoes.js"></script>
+</head>
+
+<body> 
+
+  <header>
+    <div class="container">
+      <div class="titulo">
+        <img src="./assets/logo/anne.png" style="width: 70px;" alt="">
+      </div>
+      <div class="navegacao">
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="cadastro.html">CADASTRO</a></li>
+          <li><a href="login.html">LOGIN</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="content">
+        <h2>Anne with an E</h2>
+        <h1>"Eu não sei você, mas de repente<br>estou me sentindo repleta de possibilidades."</h1>
+      </div>
+  </main>
+
+<section class="login">
+  <div class="box_login">
+    <div class="caixa_formulario">
+        <h1>BOAS VINDAS!</h1>
+            <input autofocus class="input_user" type="text" placeholder="E-mail" id="ipt_email">
+            <input class="input_pass" type="password" placeholder="Senha" id="ipt_senha">
+    
+        <span class="sem_login">Não tem login? <b onclick="criar_conta()">Cadastre-se já!</b></span>
+        <button onclick="entrar()">Entrar</button>
+    </div>
+</div>
+</section>
+
+  <footer>
+    <div class="footer_bottom">
+      <p>Desenvolvido por Rayssa Matsui © 2022</p>
+    </div>
+  </footer>
+
+</body>
+</html>
+
+<script>
+function entrar() {
+
+        var emailVar = ipt_email.value;
+        var senhaVar = ipt_senha.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            finalizarAguardar();
+            return false;
+
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    setTimeout(function () {
+                        window.location = "home.html";
+                    }, 1000); 
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+</script>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/global.style.css">
+    <link rel="stylesheet" href="style/style.quiz.css">
+    <script src="./js/script.js"></script>
+    <title>Anne with an e</title>
+</head>
+
+<body>
+    <div class="content">
+        <div class="navigation">
+            <ul>
+                <li class="list">
+                    <a href="home.html">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Home</span>
+                    </a>
+                </li>
+
+                <li class="list active">
+                    <a href="quiz.html">
+                        <span class="icon">
+                            <ion-icon name="game-controller-outline"></ion-icon>
+                        </span>
+                        <span class="title">Quiz</span>
+                    </a>
+                </li>
+                <div class="out">
+                    <li class="list">
+                        <a href="index.html">
+                            <span class="icon">
+                                <ion-icon name="log-out-outline"></ion-icon>
+                            </span>
+                            <span class="title">Sair</span>
+                        </a>
+                    </li>
+                </div>
+            </ul>
+        </div>
+        <div class="quiz">
+            <div class="iniciarQuiz">
+                <h1 class="titulo--quiz">Você conhece Anne with an E?</h1>
+                <button class="iniciar">Iniciar</button>
+            </div>
+            <div class="conteudoQuiz">
+                <h3 id="pergunta">PERGUNTA AQUI</h3>
+                <button id="op1" class="option">Alternativa 1</button>
+                <button id="op2" class="option">Alternativa 2</button>
+                <button id="op3" class="option">Alternativa 3</button>
+                <button id="op4" class="option">Alternativa 4</button>
+                <div class="proximo">
+                    <button class="responder" id="responder">Responder</button>
+                </div>
+            </div>
+            <div class="finalizarQuiz">
+                <img src="" alt="" id="imagem__nota">
+                <p id="notaFinal"></p>
+                <button onclick="finalizar()" id="botao__finalizar">Finalizar</button>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
+</body>
+
+</html>
+<script>
+    
+    const list = document.querySelectorAll('.list');
+    function activeLink() {
+        list.forEach((item) =>
+        item.classList.remove('active'));
+        this.classList.add('active');
+    }
+    list.forEach((item) =>
+    item.addEventListener('click', activeLink));
+    
+</script>
+<script src="js/quiz.js"></script>

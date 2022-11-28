@@ -1,0 +1,185 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.content{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/logo/anne-quiz2.jpg');
+    background-size: cover;
+}
+
+
+.navigation{
+    position: relative;
+    height: 100vh;
+    background: var(--baby-brown);
+    width: 70px;
+    box-shadow: 10px 0 0 var(--hot-brown) ;
+    border-left: 10px solid var(--baby-brown);
+    overflow-x: hidden;
+    transition: 0.5s;
+    grid-column: 1;
+}
+.navigation:hover{
+    width: 300px;
+}
+
+.navigation .out{
+    margin-top: 450px;
+}
+
+.navigation ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-left: 5px;
+    padding-top: 40px;
+}
+
+.navigation ul li{
+    position: relative;
+    list-style: none;
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.navigation ul li a{
+    position: relative;
+    display: flex;
+    width: 100%;
+    text-decoration: none;
+    color: var(--pink-white);
+}
+
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 70px;
+}
+
+.navigation ul li a .icon ion-icon{
+    position: relative;
+    font-size: 1.5rem;
+    z-index: 1;
+}
+
+.navigation ul li a .title{
+    position: relative;
+    display: block;
+    padding-left: 10px;
+    height: 60px;
+    line-height: 60px;
+    white-space: nowrap;
+}
+
+.navigation ul li.active{
+    background: var(--hot-brown);
+}
+
+.iniciarQuiz{
+    text-align: center;
+}
+.titulo--quiz {
+    text-align: center;
+    font-size: 40px;
+}
+
+.iniciar {
+    width: 300px;
+    height: 50px;
+    border: none;
+    margin-top: 2em;
+    align-self: center;
+    text-transform: uppercase;
+    border-radius: 50px;
+    background-color: var(--pink-white);
+    color: var(--baby-brown);
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.quiz {
+    width: 700px;
+    height: 600px;
+    margin-top: 50px;
+    background-color: var(--baby-brown);
+    border-radius: 100px;
+    color: var(--pink-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.conteudoQuiz {
+    text-align: center;
+    flex-direction: column;
+    text-align: center;
+    text-transform: uppercase;
+    display: none;
+}
+
+.conteudoQuiz h3 {
+    font-size: 30px;
+}
+
+.finalizarQuiz {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    text-transform: uppercase;
+    font-size: 25px;
+    border-radius: 100px;
+}
+
+.finalizarQuiz button {
+    width: 400px;
+    border: none;
+    margin-top: 3em;
+    height: 40px;
+    text-transform: uppercase;
+    border-radius: 50px;
+    background-color: var(--pink-white);
+    color: var(--baby-brown);
+    cursor: pointer;
+}
+
+#nota {
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
+.option {
+    width: 300px;
+    height: 50px;
+    border: none;
+    margin-top: 2em;
+    align-self: center;
+    text-transform: uppercase;
+    border-radius: 50px;
+    background-color: var(--pink-white);
+    color: var(--baby-brown);
+    cursor: pointer;
+}
+
+.responder {
+    width: 400px;
+    border: none;
+    margin-top: 3em;
+    height: 40px;
+    text-transform: uppercase;
+    border-radius: 50px;
+    background-color: var(--pink-white);
+    color: var(--baby-brown);
+    cursor: pointer;
+}

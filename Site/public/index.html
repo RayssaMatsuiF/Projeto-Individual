@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/global.style.css">
+  <link rel="stylesheet" href="style/index.style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="./js/script.js"></script>
+  <title>Anne with an e | Home</title>
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <div class="titulo">
+        <img src="./assets/logo/anne.png" style="width: 70px;" alt="">
+      </div>
+      <div class="navegacao">
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="cadastro.html">CADASTRO</a></li>
+          <li><a href="login.html">LOGIN</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="content">
+        <h2>Anne with an E</h2>
+        <h1>"Não é o que o mundo reserva para você, <br>mas o que você traz para o mundo."</h1>
+        <p>Baseada no livro Anne de Grenn Gables, de L. M. Montgomery, <br> a história relata a jornada de uma impetuosa orfã que é <br>
+           adotada por engano por irmãos solteirões do interior.</p>
+      </div>
+  </main>
+
+  <section class="section_sobre" id="sobre">
+    <div class="container">
+      <div class="content_sobre">
+        <h2>Ahead by a Century</h2>
+          <p> A música de abertura se chama "Ahead by a Century", algo como "Um século à frente", em tradução livre. A frase se encaixa muito bem na protagonista Anne e na própria série. A série destaca sobre os temas atemporais de igualdade e respeito, entregando uma mescla de drama, crueldade, humor e carinho. É claro o desenvolvimento dos personagens, que ao longo da série amadurecem e se transformam por suas experiências vividas. Por isso somos envolvidos numa trama com infinitas possibilidades, aos poucos surpreendidos por novos sentimentos por cada um - afinal, não existe essa de "pessoa boa, pessoa má". Cada um tem seus defeitos e qualidades, e a dualidade do caráter humano e conflito pessoais é bem trabalhada. <b> Quer descobrir mais sobre o mundo cativante desta série?</b></p>
+          <div class="acessar">
+            <button onclick="login()">Vamos lá</button>
+          </div>
+        </div>
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="./assets/slide/slide1.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="./assets/slide/slide2.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="./assets/slide/slide3.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="./assets/slide/slide4.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="./assets/slide/slide5.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="./assets/slide/slide6.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="./assets/slide/slide7.jpg" alt="">
+            </div>
+            <div class="swiper-slide">   
+              <img src="./assets/slide/slide8.png" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="./assets/slide/slide9.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="./assets/slide/slide10.jpg" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section_ensinamentos" id="ensinamentos">
+    <div class="container">
+      <div class="content_ensinamentos">
+        <div class="box">
+          <img src="./assets/icons/anne-resiliencia.png" alt="">
+          <h2>Resiliência</h2>
+          <p>Anne tem, sim, seus momentos de fraqueza, mas no final, ela não desiste de seus sonhos. Ela luta e encontra forças para continuar.</p>
+        </div>
+        <div class="box">
+          <img src="./assets/icons/anne-determinacao.png" alt="">
+          <h2>Determinação</h2>
+          <p>A determinação de Anne ditou seu destino. Mesmo passando por situações difíceis Anne não se deixa vencer pela decepção</p>
+        </div>
+        <div class="box">
+          <img src="./assets/icons/anne-inteligencia-emocional.png" alt="">
+          <h2>Inteligência Emocional</h2>
+          <p id="sobre">Apesar dos traumas de infância e de ser uma menina, Anne não transfere seu rancor e mágoa às pessoas ao seu redor. Ela extrai de uma experiência ruim um aprendizado.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer_bottom">
+      <p>Desenvolvido por Rayssa Matsui © 2022</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>
+<script>
+
+const swiper = new Swiper('.swiper', {
+ autoplay: {
+   delay: 3000,
+ },
+});
+</script>

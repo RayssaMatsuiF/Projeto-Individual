@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anne with an e | Cadastro Usuário</title>
+    <link rel="stylesheet" href="style/global.style.css">
+    <link rel="stylesheet" href="style/style.cadastro.css">
+    <script src="./js/script.js"></script>  
+    <script src="js/funcoes.js"></script>
+    <script src="js/validation.js"></script>
+</head>
+<body>
+  
+  <header>
+    <div class="container">
+      <div class="titulo">
+        <img src="./assets/logo/anne.png" style="width: 70px;" alt="">
+      </div>
+      <div class="navegacao">
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="cadastro.html" class="">CADASTRO</a></li>
+          <li><a href="login.html">LOGIN</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="content">
+        <h2>Anne with an E</h2>
+        <h1>"Grandes palavras são necessárias<br>para expressar grandes ideias."</h1>
+      </div>
+  </main>
+        
+    <section class="cadastro">
+        <div class="box_cadastro">
+            <div class="caixa_formulario">
+                <h1>CADASTRO DE USUÁRIO</h1>
+                <input id= "ipt_usuario" autofocus class="input_user" type="text" placeholder= "Usuário">
+                <input id= "ipt_email" class="input_email" type="email" placeholder="E-mail">
+                <input onfocus="mostrar_requisitos()" class="input_pass" type="password" placeholder="Senha"  id="input_senha" onkeyup="requisitos_senha()">
+                <div style="color: gray; font-size: 12px; display: none;" id="requisitos">
+                    <span id="min_char">➢ A senha deve conter no mínimo 8 caracteres;</span>
+                    <span id="char_maiusculo">➢ A senha deve conter uma letra maiúscula;</span>
+                    <span id="char_special">➢ A senha deve conter um caracter especial;</span>
+                </div>
+                <input class="input_pass_2" type="password" placeholder="Confirme a Senha">                
+                <button onclick="cadastrar()" id="botao_cadastrar">Cadastrar</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer_bottom">
+        <p>Desenvolvido por Rayssa Matsui © 2022</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+<script>
+  function cadastrar() {
+
+        var nomeVar = ipt_usuario.value;
+        var emailVar = ipt_email.value;
+        var senhaVar = input_senha.value;
+
+        if (nomeVar == "" || emailVar == "" || senhaVar == "") {
+            swal("Erro!", "Preencha todos os campos", "error");
+            return false;
+        }
+        else {
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
+                
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        
+        });
+
+        return false;
+        }
+      }
+</script>
