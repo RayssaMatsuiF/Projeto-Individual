@@ -37,9 +37,11 @@
             </div>
         </ul>
     </div>
-    <div class="ranking">
-        <h1>RANKING GLOBAL QUIZ</h1>
-        <div id="feed_container" class="feed-container">
+        <div class="ranking">
+            <div class="titulo">
+                <h1>Ranking Quiz</h1>
+            </div>
+            <div id="feed_container" class="feed-container">
         </div>
     </div>
 </div>
@@ -70,7 +72,6 @@
                 if (resposta.status == 204) {
                     var feed = document.getElementById("feed_container");
                     var mensagem = document.createElement("span");
-                    mensagem.innerHTML = "Nenhum resultado encontrado."
                     feed.appendChild(mensagem);
                     throw "Nenhum resultado encontrado!!";
                 }
@@ -96,7 +97,7 @@
 
                         var resultado = document.querySelector('.ranking')
                         resultado.appendChild(divRanking);
-                        divRanking.className = 'ranking'
+                        divRanking.className = 'feed-container'
 
                         divRanking.appendChild(spanID);
                         divRanking.appendChild(spanNome);
@@ -107,8 +108,6 @@
                         spanNome.innerHTML = " Nome: <b>" + publicacao.Nome + "</b>";
                         divDescricao.innerHTML = " Nota: <b>" + publicacao.Nota + "</b>" + " Pontos";
                        
-                       
-
                     }
 
     
